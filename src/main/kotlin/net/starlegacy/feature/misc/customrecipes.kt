@@ -27,6 +27,7 @@ object CustomRecipes : SLComponent() {
 			registerWireRecipe()
 			registerSeaLanternRecipe()
 			registerEndPortalFrameRecipe()
+			registerDispenserRecipe
 		}
 	}
 
@@ -299,6 +300,16 @@ object CustomRecipes : SLComponent() {
 				'w' to materialChoice(Material.WARPED_PLANKS),
 				'o' to materialChoice(Material.ENDER_PEARL),
 				's' to materialChoice(Material.END_STONE)
+        private fun registerDispenserRecipe() {
+		registerShapedRecipe(
+			"dispenser",
+			ItemStack(Material.DISPENSER, 1),
+			"ccc", "cpc", "crc",
+			ingredients = mapOf(
+				'c' to materialChoice(Material.COBBLESTONE),
+				'r' to materialChoice(Material.REDSTONE),
+				's' to materialChoice(Material.END_STONE),
+				'p' to materialChoice(Material.PISTON)
 			)
 		)
 	}
